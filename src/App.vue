@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <ProfileForm />
-    <SearchMovie />
+    <SearchMovie v-bind:movies="movies" />
   </div>
 </template>
 
@@ -16,6 +16,24 @@ export default {
     Header,
     ProfileForm,
     SearchMovie,
+  },
+  data() {
+    return {
+      movies: [
+        {
+          id: 1,
+          title: "tenet",
+        },
+        {
+          id: 1,
+          title: "tenet",
+        },
+        {
+          id: 1,
+          title: "tenet",
+        },
+      ],
+    };
   },
 };
 </script>
