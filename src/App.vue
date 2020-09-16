@@ -7,6 +7,9 @@
           <ProfileForm />
           <SearchMovie v-bind:movies="movies" />
         </div>
+        <div>
+          <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
+        </div>
       </div>
     </v-content>
   </v-app>
@@ -15,6 +18,7 @@
 <script>
 import Header from "./components/Layout/Header";
 import ProfileForm from "./components/Form/ProfileForm";
+import MovieContainer from "./components/MovieContainer/MovieContainer";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 export default {
   name: "App",
@@ -22,6 +26,7 @@ export default {
     Header,
     ProfileForm,
     SearchMovie,
+    MovieContainer,
   },
   data() {
     return {
