@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <Header />
+    <ProfileForm />
   </div>
 </template>
 
 <script>
 import Header from "./components/Layout/Header";
+import ProfileForm from "./components/Form/ProfileForm";
 export default {
   name: "App",
   components: {
     Header,
+    ProfileForm,
   },
 };
 </script>
