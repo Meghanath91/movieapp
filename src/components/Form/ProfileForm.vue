@@ -19,4 +19,38 @@ export default {
 };
 </script>
 <style scoped>
+form {
+  /* background-color: #061138; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 3%;
+  line-height: 3rem;
+  /* align-items: center; */
+}
+form p {
+  color: white;
+  margin-left: 50%;
+}
+form input {
+  border: none;
+  margin-left: 15%;
+  width: 60%;
+  margin-bottom: 5%;
+
+  /* background-color: #27293a;
+  color: white; */
+  border-radius: 15px;
+
+  line-height: 3rem;
+}
+textarea {
+  border: none;
+  width: 60%;
+  margin-left: 15%;
+  /* background-color: #27293a;
+  color: white; */
+  border-radius: 15px;
+  line-height: 3rem;
+}
 </style>
