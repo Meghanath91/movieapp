@@ -22,7 +22,9 @@ import DisplayMovie from "../DisplayMovie/DisplayMovie";
 
 export default {
   name: "SearchMovie",
-  components: { DisplayMovie },
+  components: {
+    DisplayMovie,
+  },
   props: ["movies"],
   data() {
     return {
@@ -43,13 +45,13 @@ export default {
         .then(async (movie) => {
           const searchResult = await movie.data.results;
           this.result = searchResult;
-          console.log(searchResult);
           this.movieQuery = "";
         });
     },
   },
 };
 </script>
+
 <style scoped>
 .search-container {
   color: white;
@@ -76,5 +78,10 @@ input {
   border-radius: 25px;
   background-color: white;
   overflow-y: auto;
+}
+.scroll {
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 25px;
 }
 </style>

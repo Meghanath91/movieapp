@@ -23,20 +23,7 @@ export default {
   },
   data() {
     return {
-      movies: [
-        {
-          id: 1,
-          title: "tenet",
-        },
-        {
-          id: 1,
-          title: "tenet",
-        },
-        {
-          id: 1,
-          title: "tenet",
-        },
-      ],
+      movies: [],
     };
   },
 };
