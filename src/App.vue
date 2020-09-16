@@ -1,60 +1,53 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+    <v-content id="app">
+      <Header />
+      <div class="main-container">
+        <div class="form-search-container">
+          <ProfileForm />
+          <SearchMovie v-bind:movies="movies" />
+        </div>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+    </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
+import Header from "./components/Layout/Header";
+import ProfileForm from "./components/Form/ProfileForm";
+import SearchMovie from "./components/SearchMovie/SearchMovie";
 export default {
-  name: 'App',
-
+  name: "App",
   components: {
-    HelloWorld,
+    Header,
+    ProfileForm,
+    SearchMovie,
   },
-
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      movies: [],
+    };
+  },
 };
 </script>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  background-color: #030a22;
+}
+.form-search-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main-container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+</style>
