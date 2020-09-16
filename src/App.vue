@@ -20,6 +20,7 @@ import Header from "./components/Layout/Header";
 import ProfileForm from "./components/Form/ProfileForm";
 import MovieContainer from "./components/MovieContainer/MovieContainer";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
+
 export default {
   name: "App",
   components: {
