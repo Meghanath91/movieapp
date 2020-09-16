@@ -8,15 +8,21 @@
         <input class="search-btn" type="submit" name="submit" value="Search" />
       </form>
     </div>
+    <div class="scroll">
+      <div class="result-container" v-bind:key="movie.id" v-for="movie in result">
+        <DisplayMovie v-on:add-movie="addMovie" v-bind:movie="movie" v-bind:movies="movies" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import DisplayMovie from "../DisplayMovie/DisplayMovie";
 
 export default {
   name: "SearchMovie",
-  components: {},
+  components: { DisplayMovie },
   props: ["movies"],
   data() {
     return {
