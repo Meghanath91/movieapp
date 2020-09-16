@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search-display-container">
     <div class="search-container">
       <h1>Add favorite movies</h1>
       <p>add at least 3 movies & you can add upto 15 movies</p>
@@ -60,17 +60,18 @@ export default {
 <style scoped>
 .search-container {
   color: white;
+  width: 100%;
 }
+.search-display-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 form {
-  display: flex;
+  /* display: flex; */
   margin-bottom: 5%;
 }
-input {
-  width: 60%;
-  border: none;
-  border-radius: 15px;
-  line-height: 3rem;
-}
+
 .search-btn {
   margin-left: 15%;
   background-color: #eedb2c;

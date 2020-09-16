@@ -50,7 +50,7 @@ export default {
 }
 .form-search-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .main-container {
   display: grid;

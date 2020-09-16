@@ -19,6 +19,7 @@
           solo
         ></v-text-field>
         <v-textarea
+          class="text-area"
           maxlength="500"
           clearable="true"
           :rules="[v=>!!v||'Short Bio is required']"
@@ -46,15 +47,14 @@ export default {
 };
 </script>
 <style>
-.theme--light.v-counter {
+.text-area .theme--light.v-counter {
   color: honeydew;
 }
 .form {
   display: flex;
   flex-direction: column;
-}
-.form p {
-  color: white;
-  margin-left: 50%;
+  width: 60%;
+
+  /* align-content: center; */
 }
 </style>
