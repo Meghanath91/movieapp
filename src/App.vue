@@ -2,17 +2,20 @@
   <div id="app">
     <Header />
     <ProfileForm />
+    <SearchMovie />
   </div>
 </template>
 
 <script>
 import Header from "./components/Layout/Header";
 import ProfileForm from "./components/Form/ProfileForm";
+import SearchMovie from "./components/SearchMovie/SearchMovie";
 export default {
   name: "App",
   components: {
     Header,
     ProfileForm,
+    SearchMovie,
   },
 };
 </script>
