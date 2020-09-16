@@ -1,10 +1,37 @@
 <template>
-  <form>
-    <input type="text" v-model="firstName" name="firstName" placeholder="First name" />
-    <input type="text" v-model="lastName" name="lastName" placeholder="Last name" />
-    <textarea placeholder="Short Bio" v-model="shortBio" />
-    <p>characters left</p>
-  </form>
+  <v-form>
+    <v-container>
+      <v-row class="form">
+        <v-text-field
+          v-model="firstName"
+          clearable="true"
+          :rules="[v=>!!v||'First Name is required']"
+          requiredclearable="true"
+          label="First Name"
+          solo
+        ></v-text-field>
+        <v-text-field
+          v-model="lastName"
+          :rules="[v=>!!v||'Last Name is required']"
+          v-bind:disabled="firstName.length === 0 ? true : false"
+          clearable="true"
+          label="Last Name"
+          solo
+        ></v-text-field>
+        <v-textarea
+          maxlength="500"
+          clearable="true"
+          :rules="[v=>!!v||'Short Bio is required']"
+          v-bind:disabled="lastName.length === 0 ? true : false"
+          :counter="500"
+          autofocus="true"
+          solo
+          name="input-7-4"
+          label="Short-Bio"
+        ></v-textarea>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 <script>
 export default {
