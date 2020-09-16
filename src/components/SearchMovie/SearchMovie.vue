@@ -44,3 +44,31 @@ export default {
   },
 };
 </script>
+<style scoped>
+.search-container {
+  color: white;
+}
+form {
+  display: flex;
+  margin-bottom: 5%;
+}
+input {
+  width: 60%;
+  border: none;
+  border-radius: 15px;
+  line-height: 3rem;
+}
+.search-btn {
+  margin-left: 15%;
+  background-color: #eedb2c;
+  border-radius: 15px;
+  width: 100px;
+}
+.result-container {
+  margin: 1%;
+  padding: 3%;
+  border-radius: 25px;
+  background-color: white;
+  overflow-y: auto;
+}
+</style>
