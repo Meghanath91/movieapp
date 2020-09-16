@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <Header />
-    <ProfileForm />
-    <SearchMovie v-bind:movies="movies" />
+    <div class="main-container">
+      <div class="form-search-container">
+        <ProfileForm />
+        <SearchMovie v-bind:movies="movies" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -48,5 +52,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   background-color: #030a22;
+}
+.form-search-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main-container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
 }
 </style>

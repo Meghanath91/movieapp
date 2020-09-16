@@ -40,8 +40,8 @@ export default {
         .get(
           `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.movieQuery}`
         )
-        .then((movie) => {
-          const searchResult = movie.data.results;
+        .then(async (movie) => {
+          const searchResult = await movie.data.results;
           this.result = searchResult;
           console.log(searchResult);
           this.movieQuery = "";
