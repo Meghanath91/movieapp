@@ -1,11 +1,16 @@
 <template>
-  <div id="app">hello</div>
+  <div id="app">
+    <Header />
+  </div>
 </template>
 
 <script>
+import Header from "./components/Layout/Header";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Header,
+  },
 };
 </script>
 
@@ -18,6 +23,6 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  background-color: #061138;
+  background-color: #030a22;
 }
 </style>
