@@ -33,11 +33,11 @@ export default {
     };
   },
   methods: {
-    searchMovie(e) {
+    async searchMovie(e) {
       e.preventDefault();
+      console.log("working");
       const API_KEY =
-        process.env.VUE_APP_API_KEY1 || process.env.VUE_APP_API_KEY2;
-
+        (await process.env.VUE_APP_API_KEY1) || process.env.VUE_APP_API_KEY2;
       axios
         .get(
           `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.movieQuery}`
