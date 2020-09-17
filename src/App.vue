@@ -43,9 +43,12 @@ export default {
     };
   },
   methods: {
+    //this method will accept a movie object and add to favorites
     addMovie(movie) {
+      //only 15 movies allowed
       if (this.movies.length < 15) {
-        if (this.movies.some((name) => name.id === movie.id)) {
+        //check if movie already exists in favorites
+        if (this.movies.some((item) => item.id === movie.id)) {
           alert("This movie already exists in the favorites");
         } else {
           this.movies.push(movie);
@@ -54,9 +57,11 @@ export default {
         alert("Maximum 15 movies allowed");
       }
     },
+    //this method handle delete event. it accepts an id of movie and filter it.
     deleteMovie(id) {
       this.movies = this.movies.filter((movie) => movie.id !== id);
     },
+    //handle profile submit event and error handling
     submitProfile() {
       if (this.profile.firstName === "") {
         alert("First Name is required");
@@ -68,6 +73,7 @@ export default {
         alert("Please add atleast 3 movies to favorite");
       } else {
         alert("your profile has been successfully created");
+        //to reload the page
         location.reload();
       }
     },

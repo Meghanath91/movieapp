@@ -46,15 +46,18 @@ export default {
     };
   },
   methods: {
+    //handle movie search event
     getResult(movieQuery) {
-      console.log("working");
+      //api key for moviedb loading from .env file
       const API_KEY =
         process.env.VUE_APP_API_KEY1 || process.env.VUE_APP_API_KEY2;
+      //using axios to do get request to api with key and dynamic query
       axios
         .get(
           `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieQuery}`
         )
         .then(async (movie) => {
+          //searchresults stored and assigned to result
           const searchResult = await movie.data.results;
           this.result = searchResult;
         });

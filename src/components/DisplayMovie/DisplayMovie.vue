@@ -31,15 +31,15 @@
 </template>
 
 <script>
-// import { v4 as uuidv4 } from "uuid";
 export default {
   name: "DisplayMovie",
   props: ["movie", "movies"],
-
   methods: {
+    //this method will be called on onclick view details.
     viewMovie(e) {
       e.preventDefault();
       const url = `https://www.themoviedb.org/movie/${this.movie.id}`;
+      //this command will open new url location
       window.location.href = url;
     },
   },
@@ -47,31 +47,16 @@ export default {
 </script>
 
 <style scoped>
-.result-item-container {
-  color: cornsilk;
-  background-color: #080618ff;
-  display: flex;
-  border-radius: 25px;
-}
-.result-item-container img {
-  border-radius: 25px;
-}
-.details-container {
-  margin-left: 3%;
-}
 .btn-container {
   margin-top: 4%;
   display: flex;
   justify-content: space-around;
 }
+.details-container {
+  margin-left: 3%;
+}
 .fav-icon {
   display: flex;
-}
-.view-icon {
-  display: flex;
-}
-.overview {
-  padding-top: 5%;
 }
 #green {
   color: rgb(47, 255, 92);
@@ -81,6 +66,9 @@ export default {
   padding: 1%;
   border-radius: 7px;
 }
+.overview {
+  padding-top: 5%;
+}
 #red {
   color: red;
   margin-bottom: 5%;
@@ -89,8 +77,20 @@ export default {
   padding: 1%;
   border-radius: 7px;
 }
+.result-item-container {
+  color: cornsilk;
+  background-color: #080618ff;
+  display: flex;
+  border-radius: 25px;
+}
+.result-item-container img {
+  border-radius: 25px;
+}
 .user-score {
   display: inline;
+}
+.view-icon {
+  display: flex;
 }
 @media only screen and (max-width: 768px) {
   .result-item-container {
