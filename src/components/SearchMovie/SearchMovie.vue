@@ -11,6 +11,7 @@
         placeholder="Please enter a movie title"
         solo
       ></v-text-field>
+      <img src="/assets/scroll.gif" width="60px" />
     </div>
 
     <div v-if="result.length" class="scroll">
@@ -18,7 +19,7 @@
         <DisplayMovie v-on:add-movie="addMovie" v-bind:movie="movie" v-bind:movies="movies" />
       </div>
     </div>
-    <img class="title-img" v-else-if="movieQuery===''" src="/assets/2.jpg" width="600px" />
+    <img class="title-img" v-else-if="movieQuery===''" src="/assets/5.gif" width="600px" />
     <!-- <h1 class="messages" v-else-if="movieQuery===''">Add movies</h1> -->
     <h1 class="messages" v-else>Can’t find that Movie</h1>
   </div>
@@ -76,12 +77,16 @@ export default {
 
 <style scoped>
 .title-img {
-  padding: 10%;
+  padding: 0 10% 10% 10%;
 }
 .search-container {
   padding: 3% 2% 0 0;
   color: white;
   width: 100%;
+}
+.search-container img {
+  margin-top: 80%;
+  margin-left: 30%;
 }
 .search-display-container {
   display: grid;

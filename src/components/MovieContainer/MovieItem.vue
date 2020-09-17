@@ -5,9 +5,9 @@
       v-if="movie.data.poster_path"
       v-bind:src="'http://image.tmdb.org/t/p/w500/'+movie.data.poster_path"
     />
-    <img v-else src="/assets/Untitled.jpg" width="100px" height="172px" />
+    <img v-else src="/assets/Untitled.jpg" width="100px" height="135px" />
     <button @click="$emit('delete-movie',movie.id)" class="del-btn">
-      <img src="/assets/delete.png" width="15px" />
+      <img src="/assets/delete.png" width="30px" />
     </button>
   </div>
 </template>

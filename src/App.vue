@@ -51,7 +51,7 @@ export default {
 #app {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  background-color: #030a22;
+  background-color: #040711;
 }
 .form-search-container {
   display: grid;
