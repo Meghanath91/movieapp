@@ -13,7 +13,6 @@
       <p>Release Date : {{movie.release_date}}</p>
       <p class="user-score">
         User Score :
-        <!-- <img src="/assets/download.png" width="35x" /> -->
         <span v-if="movie.vote_average>=8" id="green">{{movie.vote_average}}</span>
         <span v-else id="red">{{movie.vote_average}}</span>
       </p>
@@ -24,9 +23,8 @@
         </button>
         <!--  -->
         <button @click="addMovie" type="button" class="fav-icon">
-          <img src="/assets/star2.png" width="25px" /> Add movie to favorites
+          <img src="/assets/star2.png" width="25px" /> Add to favorites
         </button>
-        <!-- <input @click="addMovie" type="button" value="Add movie to favorites" /> -->
       </div>
     </div>
   </div>
@@ -98,12 +96,6 @@ export default {
   border: 3px solid greenyellow;
   padding: 1%;
   border-radius: 7px;
-
-  /* position: relative;
-  z-index: 1;
-  top: -12px;
-  left: -2px; */
-  /* z-index: 1; */
 }
 #red {
   color: red;
@@ -115,5 +107,12 @@ export default {
 }
 .user-score {
   display: inline;
+}
+@media only screen and (max-width: 768px) {
+  .result-item-container {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
