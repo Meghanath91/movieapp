@@ -37,11 +37,6 @@
 export default {
   name: "ProfileForm",
   props: ["profile"],
-  // data() {
-  //   return {
-  //   profile:""
-  //   };
-  // },
 };
 </script>
 <style>
@@ -60,7 +55,6 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .main-form {
-    /* padding: 5% 0 0 12%; */
     width: 90%;
     display: flex;
     align-content: center;

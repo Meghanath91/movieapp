@@ -12,12 +12,6 @@
 <script>
 export default {
   name: "CreateProfileButton",
-  // methods: {
-  //   submitProfile() {
-  //     alert("please add atleast 3 movies");
-  //     console.log("working");
-  //   },
-  // },
 };
 </script>
 <style scoped>
@@ -33,5 +27,11 @@ export default {
   border: none;
   border-radius: 5px;
   height: 8vh;
+}
+@media only screen and (max-width: 768px) {
+  .profile-create-btn {
+    margin: 10% 0 10% 0;
+    font-size: 1rem;
+  }
 }
 </style>

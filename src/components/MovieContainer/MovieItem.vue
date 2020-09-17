@@ -7,7 +7,7 @@
     />
     <img v-else src="/assets/Untitled.jpg" width="100px" height="135px" />
     <button @click="$emit('delete-movie',movie.id)" class="del-btn">
-      <img src="/assets/delete.png" width="30px" />
+      <img src="/assets/delete-sign.png" width="20px" />
     </button>
   </div>
 </template>
@@ -40,6 +40,7 @@ export default {
   color: white;
 }
 .del-btn {
+  margin-top: 10%;
   width: 30%;
 }
 </style>
