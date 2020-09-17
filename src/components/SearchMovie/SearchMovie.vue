@@ -18,8 +18,9 @@
         <DisplayMovie v-on:add-movie="addMovie" v-bind:movie="movie" v-bind:movies="movies" />
       </div>
     </div>
-    <h1 v-else-if="movieQuery===''">Add movies</h1>
-    <h1 v-else>No movies found</h1>
+    <img class="title-img" v-else-if="movieQuery===''" src="/assets/2.jpg" width="600px" />
+    <!-- <h1 class="messages" v-else-if="movieQuery===''">Add movies</h1> -->
+    <h1 class="messages" v-else>Can’t find that Movie</h1>
   </div>
 </template>
 
@@ -74,6 +75,9 @@ export default {
 </script>
 
 <style scoped>
+.title-img {
+  padding: 10%;
+}
 .search-container {
   padding: 3% 2% 0 0;
   color: white;
@@ -108,5 +112,9 @@ form {
   height: 500px;
   overflow-y: auto;
   border-radius: 25px;
+}
+.messages {
+  color: white;
+  text-align: center;
 }
 </style>
