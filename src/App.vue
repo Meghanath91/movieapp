@@ -1,18 +1,16 @@
 <template>
-  <v-app>
-    <v-content id="app">
-      <Header />
-      <div class="main-container">
-        <div class="form-search-container">
-          <ProfileForm v-bind:profile="profile" />
-          <SearchMovie v-bind:movies="movies" v-on:add-movie="addMovie" />
-        </div>
-        <div>
-          <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
-          <CreateProfileButton v-on:submit-profile="submitProfile" />
-        </div>
+  <v-app id="app">
+    <Header />
+    <div class="main-container">
+      <div class="form-search-container">
+        <ProfileForm v-bind:profile="profile" />
+        <SearchMovie v-bind:movies="movies" v-on:add-movie="addMovie" />
       </div>
-    </v-content>
+      <div>
+        <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
+        <CreateProfileButton v-on:submit-profile="submitProfile" />
+      </div>
+    </div>
   </v-app>
 </template>
 
@@ -72,7 +70,7 @@ export default {
       } else if (this.movies.length < 3) {
         alert("Please add atleast 3 movies to favorite");
       } else {
-        alert("your profile has been successfully created");
+        alert("Your profile has been successfully created");
         //to reload the page
         location.reload();
       }

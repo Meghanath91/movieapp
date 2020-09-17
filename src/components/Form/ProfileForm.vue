@@ -3,9 +3,8 @@
     <v-row class="form">
       <v-text-field
         v-model="profile.firstName"
-        clearable="true"
+        :clearable="true"
         :rules="[v=>!!v||'First Name is required']"
-        requiredclearable="true"
         label="First Name"
         solo
       ></v-text-field>
@@ -13,7 +12,7 @@
         v-model="profile.lastName"
         :rules="[v=>!!v||'Last Name is required']"
         v-bind:disabled="profile.firstName.length === 0 ? true : false"
-        clearable="true"
+        :clearable="true"
         label="Last Name"
         solo
       ></v-text-field>

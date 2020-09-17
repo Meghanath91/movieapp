@@ -6,7 +6,7 @@
 
       <v-text-field
         @keyup="getResult(movieQuery)"
-        clearable="true"
+        :clearable="true"
         v-model="movieQuery"
         placeholder="Please enter a movie title"
         loading
