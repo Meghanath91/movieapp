@@ -65,7 +65,7 @@ export default {
 <style scoped>
 .result-item-container {
   color: cornsilk;
-  background-color: rgb(6, 6, 34);
+  background-color: #080618ff;
   display: flex;
   border-radius: 25px;
 }

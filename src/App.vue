@@ -9,6 +9,7 @@
         </div>
         <div>
           <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
+          <CreateProfileButton />
         </div>
       </div>
     </v-content>
@@ -20,6 +21,7 @@ import Header from "./components/Layout/Header";
 import ProfileForm from "./components/Form/ProfileForm";
 import MovieContainer from "./components/MovieContainer/MovieContainer";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
+import CreateProfileButton from "./components/Form/CreateProfileButton";
 
 export default {
   name: "App",
@@ -28,6 +30,7 @@ export default {
     ProfileForm,
     SearchMovie,
     MovieContainer,
+    CreateProfileButton,
   },
   data() {
     return {
@@ -51,7 +54,7 @@ export default {
 #app {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  background-color: #040711;
+  background-color: #080618ff;
 }
 .form-search-container {
   display: grid;

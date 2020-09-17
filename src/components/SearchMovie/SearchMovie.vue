@@ -105,8 +105,7 @@ form {
   width: 100px;
 }
 .result-container {
-  background-color: rgb(6, 6, 34);
-  /* background-color: rgb(4, 4, 22); */
+  background-color: #080618ff;
   margin: 0 4% 2% 2%;
   padding: 3%;
   border-radius: 25px;
