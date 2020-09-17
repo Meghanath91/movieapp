@@ -34,6 +34,11 @@ export default {
       movies: [],
     };
   },
+  methods: {
+    deleteMovie(id) {
+      this.movies = this.movies.filter((movie) => movie.id !== id);
+    },
+  },
 };
 </script>
 
