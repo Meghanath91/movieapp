@@ -45,7 +45,11 @@ export default {
   methods: {
     addMovie(movie) {
       if (this.movies.length < 15) {
-        this.movies.push(movie);
+        if (this.movies.some((name) => name.id === movie.id)) {
+          alert("This movie already exists in the favorites");
+        } else {
+          this.movies.push(movie);
+        }
       } else {
         alert("Maximum 15 movies allowed");
       }
@@ -88,7 +92,7 @@ export default {
 }
 .main-container {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
 }
 @media only screen and (max-width: 768px) {
   .form-search-container {
