@@ -5,6 +5,7 @@
       <p>add at least 3 movies & you can add upto 15 movies</p>
       <form @submit="searchMovie">
         <v-text-field
+          @keyup="getResult(query)"
           clearable="true"
           v-model="movieQuery"
           placeholder="Please enter a movie title"
@@ -38,6 +39,10 @@ export default {
     };
   },
   methods: {
+    getResult(query){
+
+    }
+
     async searchMovie(e) {
       e.preventDefault();
       console.log("working");

@@ -13,13 +13,20 @@
       <p>Release Date : {{movie.release_date}}</p>
       <p class="user-score">
         User Score :
-        <span v-if="movie.vote_average>=8" class="green">{{movie.vote_average}}</span>
-        <span v-else class="red">{{movie.vote_average}}</span>
+        <!-- <img src="/assets/download.png" width="35x" /> -->
+        <span v-if="movie.vote_average>=8" id="green">{{movie.vote_average}}</span>
+        <span v-else id="red">{{movie.vote_average}}</span>
       </p>
-      <p>{{movie.overview}}</p>
+      <p class="overview">{{movie.overview}}</p>
       <div class="btn-container">
-        <p>View Details</p>
-        <input @click="addMovie" type="button" value="Add movie to favorites" />
+        <button @click="viewMovie" type="button" class="view-icon">
+          <img src="/assets/view-icon.png" width="30px" /> View Details
+        </button>
+        <!--  -->
+        <button @click="addMovie" type="button" class="fav-icon">
+          <img src="/assets/star2.png" width="25px" /> Add movie to favorites
+        </button>
+        <!-- <input @click="addMovie" type="button" value="Add movie to favorites" /> -->
       </div>
     </div>
   </div>
@@ -46,6 +53,11 @@ export default {
         alert("Maximum 15 movies allowed");
       }
     },
+    viewMovie(e) {
+      e.preventDefault();
+      const url = `https://www.themoviedb.org/movie/${this.movie.id}`;
+      window.location.href = url;
+    },
   },
 };
 </script>
@@ -68,10 +80,40 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-.green {
-  color: greenyellow;
+.fav-icon {
+  display: flex;
 }
-.red {
+.view-icon {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.overview {
+  padding-top: 5%;
+}
+#green {
+  color: rgb(47, 255, 92);
+  margin-bottom: 5%;
+  font-size: 15px;
+  border: 3px solid greenyellow;
+  padding: 1%;
+  border-radius: 7px;
+
+  /* position: relative;
+  z-index: 1;
+  top: -12px;
+  left: -2px; */
+  /* z-index: 1; */
+}
+#red {
   color: red;
+  margin-bottom: 5%;
+  font-size: 15px;
+  border: 3px solid red;
+  padding: 1%;
+  border-radius: 7px;
+}
+.user-score {
+  display: inline;
 }
 </style>
