@@ -9,6 +9,7 @@
         clearable="true"
         v-model="movieQuery"
         placeholder="Please enter a movie title"
+        loading
         solo
       ></v-text-field>
       <img src="/assets/scroll.gif" width="60px" />
@@ -52,22 +53,6 @@ export default {
         .then(async (movie) => {
           const searchResult = await movie.data.results;
           this.result = searchResult;
-        });
-    },
-
-    async searchMovie(e) {
-      e.preventDefault();
-      console.log("working");
-      const API_KEY =
-        (await process.env.VUE_APP_API_KEY1) || process.env.VUE_APP_API_KEY2;
-      axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.movieQuery}`
-        )
-        .then(async (movie) => {
-          const searchResult = await movie.data.results;
-          this.result = searchResult;
-          this.movieQuery = "";
         });
     },
   },
@@ -136,6 +121,10 @@ form {
   }
   .search-container img {
     display: none;
+  }
+  .messages {
+    margin-top: 12%;
+    font-size: 18px;
   }
 }
 </style>

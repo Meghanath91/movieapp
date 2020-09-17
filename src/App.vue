@@ -9,7 +9,7 @@
         </div>
         <div>
           <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
-          <CreateProfileButton />
+          <CreateProfileButton v-on:submit-profile="submitProfile" />
         </div>
       </div>
     </v-content>
@@ -40,6 +40,13 @@ export default {
   methods: {
     deleteMovie(id) {
       this.movies = this.movies.filter((movie) => movie.id !== id);
+    },
+    submitProfile() {
+      if (this.movies.length < 3) {
+        alert("Please add atleast 3 movies to favorite");
+      } else {
+        alert("your profile has been successfully created");
+      }
     },
   },
 };
