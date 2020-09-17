@@ -41,6 +41,7 @@ p {
 }
 .movie-container {
   margin: 2%;
+
   background-color: #27293a;
   width: 95%;
   display: flex;

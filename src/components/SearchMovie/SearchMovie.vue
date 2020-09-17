@@ -1,7 +1,7 @@
 <template>
   <div class="search-display-container">
     <div class="search-container">
-      <h1>Add favorite movies</h1>
+      <h2>Add favorite movies</h2>
       <p>add at least 3 movies & you can add upto 15 movies</p>
       <form @submit="searchMovie">
         <v-text-field
@@ -59,6 +59,7 @@ export default {
 
 <style scoped>
 .search-container {
+  padding: 3% 2% 0 0;
   color: white;
   width: 100%;
 }
@@ -79,14 +80,16 @@ form {
   width: 100px;
 }
 .result-container {
-  margin: 1%;
+  background-color: rgb(6, 6, 34);
+  /* background-color: rgb(4, 4, 22); */
+  margin: 0 4% 2% 2%;
   padding: 3%;
   border-radius: 25px;
-  background-color: white;
+  /* background-color: white; */
   overflow-y: auto;
 }
 .scroll {
-  height: 400px;
+  height: 500px;
   overflow-y: auto;
   border-radius: 25px;
 }
