@@ -5,7 +5,7 @@
       <div class="main-container">
         <div class="form-search-container">
           <ProfileForm v-bind:profile="profile" />
-          <SearchMovie v-bind:movies="movies" />
+          <SearchMovie v-bind:movies="movies" v-on:add-movie="addMovie" />
         </div>
         <div>
           <MovieContainer v-bind:movies="movies" v-on:delete-movie="deleteMovie" />
@@ -43,6 +43,13 @@ export default {
     };
   },
   methods: {
+    addMovie(movie) {
+      if (this.movies.length < 15) {
+        this.movies.push(movie);
+      } else {
+        alert("Maximum 15 movies allowed");
+      }
+    },
     deleteMovie(id) {
       this.movies = this.movies.filter((movie) => movie.id !== id);
     },

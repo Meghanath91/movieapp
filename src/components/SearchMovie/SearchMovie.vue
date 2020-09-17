@@ -17,7 +17,11 @@
 
     <div v-if="result.length" class="scroll">
       <div class="result-container" v-bind:key="movie.id" v-for="movie in result">
-        <DisplayMovie v-on:add-movie="addMovie" v-bind:movie="movie" v-bind:movies="movies" />
+        <DisplayMovie
+          v-on:add-movie="$emit('add-movie',movie)"
+          v-bind:movie="movie"
+          v-bind:movies="movies"
+        />
       </div>
     </div>
     <img class="title-img" v-else-if="movieQuery===''" src="/assets/5.gif" />

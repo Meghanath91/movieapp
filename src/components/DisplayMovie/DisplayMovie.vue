@@ -22,7 +22,7 @@
           <img src="/assets/view-icon.png" width="25px" /> View Details
         </button>
 
-        <button @click="addMovie" type="button" class="fav-icon">
+        <button @click="$emit('add-movie',movie)" type="button" class="fav-icon">
           <img src="/assets/star2.png" width="25px" /> Add to favorites
         </button>
       </div>
@@ -37,18 +37,6 @@ export default {
   props: ["movie", "movies"],
 
   methods: {
-    addMovie(e) {
-      e.preventDefault();
-
-      if (this.movies.length < 15) {
-        const newMovie = this.movie;
-
-        this.movies.push(newMovie);
-        this.$emit("add-movie", newMovie);
-      } else {
-        alert("Maximum 15 movies allowed");
-      }
-    },
     viewMovie(e) {
       e.preventDefault();
       const url = `https://www.themoviedb.org/movie/${this.movie.id}`;
