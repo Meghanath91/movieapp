@@ -64,4 +64,14 @@ export default {
   display: grid;
   grid-template-rows: 1fr 2fr;
 }
+@media only screen and (max-width: 768px) {
+  .form-search-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>

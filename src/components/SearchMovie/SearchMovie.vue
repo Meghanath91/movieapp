@@ -19,8 +19,7 @@
         <DisplayMovie v-on:add-movie="addMovie" v-bind:movie="movie" v-bind:movies="movies" />
       </div>
     </div>
-    <img class="title-img" v-else-if="movieQuery===''" src="/assets/5.gif" width="600px" />
-    <!-- <h1 class="messages" v-else-if="movieQuery===''">Add movies</h1> -->
+    <img class="title-img" v-else-if="movieQuery===''" src="/assets/5.gif" />
     <h1 class="messages" v-else>Can’t find that Movie</h1>
   </div>
 </template>
@@ -77,10 +76,12 @@ export default {
 
 <style scoped>
 .title-img {
-  padding: 0 10% 10% 10%;
+  padding: 10%;
+  width: 600px;
 }
 .search-container {
-  padding: 3% 2% 0 0;
+  margin-bottom: 5%;
+  padding: 3% 8% 0 8%;
   color: white;
   width: 100%;
 }
@@ -94,7 +95,6 @@ export default {
 }
 
 form {
-  /* display: flex; */
   margin-bottom: 5%;
 }
 
@@ -109,7 +109,6 @@ form {
   margin: 0 4% 2% 2%;
   padding: 3%;
   border-radius: 25px;
-  /* background-color: white; */
   overflow-y: auto;
 }
 .scroll {
@@ -120,5 +119,23 @@ form {
 .messages {
   color: white;
   text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-display-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-container {
+    height: 20vh;
+  }
+  .title-img {
+    margin: auto;
+    margin-top: 5%;
+    width: 300px;
+  }
+  .search-container img {
+    display: none;
+  }
 }
 </style>

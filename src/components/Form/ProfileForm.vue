@@ -51,13 +51,19 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  /* width: 70%; */
-  /* padding: 5% 0 0 5%; */
 }
 .main-form {
   padding: 5% 0 0 10%;
   width: 80%;
   display: flex;
   align-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .main-form {
+    /* padding: 5% 0 0 12%; */
+    width: 90%;
+    display: flex;
+    align-content: center;
+  }
 }
 </style>
