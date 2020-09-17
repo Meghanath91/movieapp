@@ -2,7 +2,7 @@
   <v-form class="main-form">
     <v-row class="form">
       <v-text-field
-        v-model="firstName"
+        v-model="profile.firstName"
         clearable="true"
         :rules="[v=>!!v||'First Name is required']"
         requiredclearable="true"
@@ -10,21 +10,22 @@
         solo
       ></v-text-field>
       <v-text-field
-        v-model="lastName"
+        v-model="profile.lastName"
         :rules="[v=>!!v||'Last Name is required']"
-        v-bind:disabled="firstName.length === 0 ? true : false"
+        v-bind:disabled="profile.firstName.length === 0 ? true : false"
         clearable="true"
         label="Last Name"
         solo
       ></v-text-field>
       <v-textarea
+        v-model="profile.shortBio"
         class="text-area"
-        maxlength="500"
-        clearable="true"
+        :maxlength="500"
+        :clearable="true"
         :rules="[v=>!!v||'Short Bio is required']"
-        v-bind:disabled="lastName.length === 0 ? true : false"
+        v-bind:disabled="profile.lastName.length === 0 ? true : false"
         :counter="500"
-        autofocus="true"
+        :autofocus="true"
         solo
         name="input-7-4"
         label="Short-Bio"
@@ -35,13 +36,12 @@
 <script>
 export default {
   name: "ProfileForm",
-  data() {
-    return {
-      firstName: "",
-      lastName: "",
-      shortBio: "",
-    };
-  },
+  props: ["profile"],
+  // data() {
+  //   return {
+  //   profile:""
+  //   };
+  // },
 };
 </script>
 <style>

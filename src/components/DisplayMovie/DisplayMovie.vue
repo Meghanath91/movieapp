@@ -19,9 +19,9 @@
       <p class="overview">{{movie.overview}}</p>
       <div class="btn-container">
         <button @click="viewMovie" type="button" class="view-icon">
-          <img src="/assets/view-icon.png" width="30px" /> View Details
+          <img src="/assets/view-icon.png" width="25px" /> View Details
         </button>
-        <!--  -->
+
         <button @click="addMovie" type="button" class="fav-icon">
           <img src="/assets/star2.png" width="25px" /> Add to favorites
         </button>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 export default {
   name: "DisplayMovie",
   props: ["movie", "movies"],
@@ -41,10 +41,8 @@ export default {
       e.preventDefault();
 
       if (this.movies.length < 15) {
-        const newMovie = {
-          id: uuidv4(),
-          data: this.movie,
-        };
+        const newMovie = this.movie;
+
         this.movies.push(newMovie);
         this.$emit("add-movie", newMovie);
       } else {
@@ -82,9 +80,7 @@ export default {
   display: flex;
 }
 .view-icon {
-  width: 30%;
   display: flex;
-  justify-content: space-between;
 }
 .overview {
   padding-top: 5%;

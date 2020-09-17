@@ -4,7 +4,7 @@
       <Header />
       <div class="main-container">
         <div class="form-search-container">
-          <ProfileForm />
+          <ProfileForm v-bind:profile="profile" />
           <SearchMovie v-bind:movies="movies" />
         </div>
         <div>
@@ -35,6 +35,11 @@ export default {
   data() {
     return {
       movies: [],
+      profile: {
+        firstName: "",
+        lastName: "",
+        shortBio: "",
+      },
     };
   },
   methods: {
@@ -42,10 +47,17 @@ export default {
       this.movies = this.movies.filter((movie) => movie.id !== id);
     },
     submitProfile() {
-      if (this.movies.length < 3) {
+      if (this.profile.firstName === "") {
+        alert("First Name is required");
+      } else if (this.profile.lastName === "") {
+        alert("Last Name is required");
+      } else if (this.profile.shortBio === "") {
+        alert("Short-bio is required");
+      } else if (this.movies.length < 3) {
         alert("Please add atleast 3 movies to favorite");
       } else {
         alert("your profile has been successfully created");
+        location.reload();
       }
     },
   },
