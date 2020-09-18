@@ -89,6 +89,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   background-color: #080618ff;
+  background-image: url("/assets/b3.jpg");
 }
 .form-search-container {
   display: grid;
