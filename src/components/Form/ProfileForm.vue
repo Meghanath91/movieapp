@@ -1,21 +1,25 @@
 <template>
   <v-form class="main-form">
     <v-row class="form">
-      <v-text-field
-        v-model="profile.firstName"
-        :clearable="true"
-        :rules="[v=>!!v||'First Name is required']"
-        label="First Name"
-        solo
-      ></v-text-field>
-      <v-text-field
-        v-model="profile.lastName"
-        :rules="[v=>!!v||'Last Name is required']"
-        v-bind:disabled="profile.firstName.length === 0 ? true : false"
-        :clearable="true"
-        label="Last Name"
-        solo
-      ></v-text-field>
+      <div class="input-container">
+        <v-text-field
+          class="text-input"
+          v-model="profile.firstName"
+          :clearable="true"
+          :rules="[v=>!!v||'First Name is required']"
+          label="First Name"
+          solo
+        ></v-text-field>
+        <v-text-field
+          class="text-input"
+          v-model="profile.lastName"
+          :rules="[v=>!!v||'Last Name is required']"
+          v-bind:disabled="profile.firstName.length === 0 ? true : false"
+          :clearable="true"
+          label="Last Name"
+          solo
+        ></v-text-field>
+      </div>
       <v-textarea
         v-model="profile.shortBio"
         class="text-area"
@@ -42,6 +46,7 @@ export default {
 .text-area .theme--light.v-counter {
   color: honeydew;
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -49,6 +54,7 @@ export default {
 .main-form {
   padding: 5% 0 0 10%;
   width: 80%;
+
   display: flex;
   align-content: center;
 }

@@ -124,7 +124,7 @@ form {
   .title-img {
     margin: auto;
     margin-top: 5%;
-    width: 300px;
+    width: 200px;
   }
   .search-container img {
     display: none;

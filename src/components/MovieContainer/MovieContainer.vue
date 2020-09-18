@@ -26,6 +26,7 @@ export default {
 
 <style scoped>
 .movie-main-container {
+  margin: 0 2% 6% 7%;
   color: white;
 }
 .movie-main-container h2 {
