@@ -1,5 +1,8 @@
 # buzzit
 
+A Movie fan website where users can search movie database and add favorite movies to their collection.
+Please checkout [Deployed Link](https://movieitt.netlify.app/)
+
 ## Project setup
 
 To install application :
