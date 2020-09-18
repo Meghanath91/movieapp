@@ -14,11 +14,11 @@ npm run serve
 
 ### Demo
 
-<!-- !["Landing-page"](https://github.com/Meghanath91/prepr/blob/master/public/projectDemo/landingPage.jpg)
+!["Web view"](https://github.com/Meghanath91/movieapp/blob/master/Demo/3.jpg)
 
-!["Main-page"](https://github.com/Meghanath91/prepr/blob/master/public/projectDemo/mainPage.jpg)
+!["Web view 2"](https://github.com/Meghanath91/movieapp/blob/master/Demo/4.jpg)
 
-!["My-projects"](https://github.com/Meghanath91/prepr/blob/master/public/projectDemo/myProjects.jpg) -->
+!["Mobile view 3"](https://github.com/Meghanath91/movieapp/blob/master/Demo/1.jpg)
 
 ### Compiles and minifies for production
 
