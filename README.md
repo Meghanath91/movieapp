@@ -2,9 +2,11 @@
 
 ## Project setup
 
-```
-npm install
-```
+To install application :
+
+1. Install NodeJs(version 12.16 and up)
+2. run `npm install` to install dependencies.
+   In the project directory, you can run:
 
 ### Compiles and hot-reloads for development
 
